@@ -171,7 +171,7 @@ export default function SellNFT() {
             </div>
             <div className="mb-6">
               <label className="block text-left text-sm font-semibold mb-1 text-[#222222]">
-                Price <span className="text-[10px] text-[#FF385C]">(in tCORE)</span>
+                Price <span className="text-[10px] text-[#FF385C]">(in BFT)</span>
               </label>
               <input
                 type="number"
