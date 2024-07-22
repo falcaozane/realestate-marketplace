@@ -82,7 +82,7 @@ export default function Marketplace() {
                 <h2 className="text-4xl font-bold text-center text-[#222222]  uppercase">
                   Marketplace
                 </h2>
-                <h6 className="text-[16px] text-center text-[#FF385C] mb-7">Explore the Amazing collection of NFT's</h6>
+                <h6 className="text-[16px] text-center text-[#FF385C] mb-7">Explore the Amazing collection of NFT&apos;s</h6>
                 {loading ? (
                   <div className="flex justify-center items-center h-64">
                     <div className="w-40 h-40 border-4 border-dashed rounded-full animate-spin border-white mt-14"></div>
@@ -101,9 +101,16 @@ export default function Marketplace() {
               </div>
             </>
           ) : (
-            <div className="text-3xl font-bold text-indigo-100 text-center items-center my-10 pt-20 h-screen">
-              You are not connected...
+            <div className="">
+              <div className="image flex justify-center  pr-16 ">
+                <img className="w-[400px]" src="https://rssmahilacollege.org/assets/img/undr.gif" alt="" />
+              </div>
+              <div className="text-3xl font-bold text-[#FF385C] flex justify-center py-8">
+                Connect Your Wallet...
+              </div>
+
             </div>
+            
           )}
         </div>
       </div>

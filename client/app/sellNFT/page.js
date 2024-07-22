@@ -223,11 +223,16 @@ export default function SellNFT() {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center flex-grow">
-          <div className="text-4xl font-bold text-[#222222] max-w-6xl mx-auto mb-20 p-4 text-center">
-            Connect Your Wallet to Continue...
-          </div>
-        </div>
+        <div className="">
+              <div className="image flex justify-center  pr-16 ">
+                <img className="w-[400px]" src="https://rssmahilacollege.org/assets/img/undr.gif" alt="" />
+              </div>
+              <div className="text-3xl font-bold text-[#FF385C] flex justify-center py-8">
+                Connect Your Wallet...
+              </div>
+
+            </div>
+            
       )}
     </div>
   );
