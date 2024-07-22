@@ -6,7 +6,6 @@ import marketplace from "@/app/marketplace.json";
 import { ethers } from "ethers";
 import { WalletContext } from "@/context/wallet";
 import { toast } from "react-toastify";
-import { IoPaperPlaneOutline } from "react-icons/io5";
 
 export default function SellNFT() {
   const [formParams, updateFormParams] = useState({
@@ -130,19 +129,25 @@ export default function SellNFT() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-indigo-950 to-indigo-900">
+    <div className="flex flex-col min-h-screen bg-white pb-12">
+      <h2 className="text-4xl mt-8 font-bold text-center text-[#222222] uppercase">Upload your NFT</h2>
+      <h5 className="text-[16px] text-center text-[#FF385C] mb-4">List and Sell your NFT</h5>
       {isConnected ? (
         <div className="flex flex-col items-center justify-center flex-grow mx-2">
-          <div className="border-2 border-indigo-800 w-full max-w-lg p-8 shadow-2xl rounded-lg my-5">
-            <h2 className="text-3xl md:text-4xl text-white mb-5 text-center uppercase font-extrabold">Upload your NFT</h2>
-            <h5 className="font-bold text-md my-2 text-center text-white">List and Sell your NFT</h5>
+          <div className="w-full max-w-lg p-8 border rounded-xl my-5">
+            <div className="flex justify-start mb-3 pb-3  pt-2 text-2xl font-semibold ">
+              <p>NFT Token Details</p>
+
+            
+            </div>
+            
             <div className="mb-6">
-              <label className="block text-left text-lg font-bold mb-2 text-indigo-100">
+              <label className="block text-left text-sm font-semibold mb-1 text-[#222222]">
                 NFT name
               </label>
               <input
                 type="text"
-                className="w-full px-4 py-2 text-base bg-indigo-900 text-indigo-50 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-2 text-base bg-white text-[#222222] border  rounded-lg focus:outline-none focus:ring-1 focus:ring-[#FF385C]"
                 value={formParams.name}
                 onChange={(e) =>
                   updateFormParams({ ...formParams, name: e.target.value })
@@ -150,11 +155,11 @@ export default function SellNFT() {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-left text-lg font-bold mb-2 text-indigo-100">
+              <label className="block text-left text-sm font-semibold mb-1 text-[#222222]">
                 NFT description
               </label>
               <textarea
-                className="w-full px-4 py-2 text-base bg-indigo-900 text-indigo-50 border border-indigo-300 rounded-lg h-20 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-2 text-base bg-white text-[#222222] border  rounded-lg h-20 focus:outline-none focus:ring-1 focus:ring-[#FF385C]"
                 value={formParams.description}
                 onChange={(e) =>
                   updateFormParams({
@@ -165,12 +170,12 @@ export default function SellNFT() {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-left text-lg font-bold mb-2 text-indigo-100">
-                Price (in tCORE)
+              <label className="block text-left text-sm font-semibold mb-1 text-[#222222]">
+                Price <span className="text-[10px] text-[#FF385C]">(in tCORE)</span>
               </label>
               <input
                 type="number"
-                className="w-full px-4 py-2 text-base bg-indigo-900 text-indigo-50 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-2 text-base bg-white text-[#222222] border  rounded-lg focus:outline-none focus:ring-1 focus:ring-[#FF385C]"
                 value={formParams.price}
                 onChange={(e) =>
                   updateFormParams({ ...formParams, price: e.target.value })
@@ -178,12 +183,12 @@ export default function SellNFT() {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-left text-lg font-bold mb-2 text-indigo-100">
+              <label className="block text-left text-sm font-semibold mb-1 text-[#222222]">
                 Total Fractions
               </label>
               <input
                 type="number"
-                className="w-full px-4 py-2 text-base bg-indigo-900 text-indigo-50 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-2 text-base bg-white text-[#222222] border  rounded-lg focus:outline-none focus:ring-1 focus:ring-[#FF385C]"
                 value={formParams.totalFractions}
                 onChange={(e) =>
                   updateFormParams({ ...formParams, totalFractions: e.target.value })
@@ -191,36 +196,35 @@ export default function SellNFT() {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-left text-lg font-bold mb-2 text-indigo-100">
+              <label className="block text-left text-sm font-semibold mb-1 text-[#222222]">
                 Upload image
               </label>
               <input
                 type="file"
-                className="w-full px-4 py-2 text-base bg-indigo-900 text-indigo-50 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-2 text-base bg-white text-[#222222] border  rounded-lg focus:outline-none focus:ring-1 focus:ring-[#FF385C]"
                 onChange={onFileChange}
                 required
               />
             </div>
-            <div className="text-indigo-100 font-medium text-center my-4">{message}</div>
+            <div className="text-[#222222] font-medium text-center my-4">{message}</div>
             <button
               onClick={listNFT}
               type="submit"
-              className={`border-none rounded-lg w-full py-3 px-6 flex items-center justify-center text-lg font-bold transition-colors ${
-                btnEnabled ? "bg-indigo-600 text-white cursor-pointer hover:bg-indigo-600" : "bg-indigo-400 text-indigo-100 cursor-not-allowed"
+              className={`border-none rounded-lg w-full py-3 px-6 flex items-center justify-center text-sm font-semibold transition-colors ${
+                btnEnabled ? "bg-[#FF385C] hover:bg-[#E01660] text-white cursor-pointer" : "bg-[#FF385C] text-white cursor-not-allowed"
               }`}
               disabled={!btnEnabled}
             >
               {btnContent === "Processing..." && (
-                <span className="inline-block border-4 border-indigo-300 border-l-white rounded-full mr-2 w-6 h-6 animate-spin" />
+                <span className="inline-block border-4 border-l-white rounded-full mr-2 w-6 h-6 animate-spin" />
               )}
               {btnContent}
-              <IoPaperPlaneOutline className="ml-4 font-bold" />
             </button>
           </div>
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center flex-grow">
-          <div className="text-4xl font-bold text-indigo-100 max-w-6xl mx-auto mb-20 p-4 text-center">
+          <div className="text-4xl font-bold text-[#222222] max-w-6xl mx-auto mb-20 p-4 text-center">
             Connect Your Wallet to Continue...
           </div>
         </div>

@@ -45,31 +45,31 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 left-0 w-full bg-gradient-to-b from-indigo-950 to-indigo-900 text-white p-4 shadow-lg">
+    <header className="sticky top-0 z-20 left-0 w-full bg-white text-[#222222] p-4 shadow-lg">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <div className="text-lg md:text-2xl font-bold">
+        <div className="text-lg md:text-2xl font-bold text-[#FF385C]">
           <Link href="/">Ignitus Network</Link>
         </div>
         <div className="flex space-x-10 items-center">
           <div className="hidden md:flex items-center space-x-4 text-sm">
-            <ul className="flex space-x-10 text-[#6A6E9F] font-semibold">
+            <ul className="flex space-x-6 text-[#222222] font-semibold">
               <li>
-                <Link href="/marketplace" className="hover:text-blue-100 ">
+                <Link href="/marketplace" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
                   MarketPlace
                 </Link>
               </li>
               <li>
-                <Link href="/sellNFT" className="hover:text-blue-100 ">
+                <Link href="/sellNFT" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
                   List
                 </Link>
               </li>
               <li>
-                <Link href="/profile" className="hover:text-blue-100 ">
+                <Link href="/profile" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
                   Profile
                 </Link>
               </li>
               <li>
-                <Link href="/fractions" className="hover:text-blue-100 ">
+                <Link href="/fractions" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg ">
                   Fractions
                 </Link>
               </li>
@@ -77,8 +77,8 @@ export default function Header() {
           </div>
           <div className="">
             <button
-              className={`px-4 py-2 rounded-full text-sm flex items-center ${
-                isConnected ? "bg-indigo-600 cursor-not-allowed" : "bg-indigo-500 hover:bg-indigo-400"
+              className={`px-4 py-2 rounded-full text-sm flex items-center text-white ${
+                isConnected ? "bg-[#FF385C] cursor-not-allowed" : "bg-[#FF385C] hover:bg-[#E01660]"
               }`}
               onClick={connectWallet}
               >
@@ -103,17 +103,17 @@ export default function Header() {
         <nav className="md:hidden flex flex-col items-center space-y-4 mt-4">
           <ul className="flex flex-col items-center space-y-4">
             <li>
-              <Link href="/marketplace" className="text-blue-300 hover:text-blue-500">
+              <Link href="/marketplace" className="">
                 MarketPlace
               </Link>
             </li>
             <li>
-              <Link href="/sellNFT" className="text-blue-300 hover:text-blue-500">
+              <Link href="/sellNFT" className="">
                 List
               </Link>
             </li>
             <li>
-              <Link href="/profile" className="text-blue-300 hover:text-blue-500">
+              <Link href="/profile" className="">
                 Profile
               </Link>
             </li>

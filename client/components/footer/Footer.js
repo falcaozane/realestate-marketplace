@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full py-6 bg-gradient-to-b from-indigo-950 to-indigo-900 text-white shadow-lg">
+    <footer className="w-full py-6 bg-[#F7F7F7] text-[#222222]  shadow-lg">
       <div className="max-w-6xl mx-auto ">
         <div className='flex justify-between'>
           <div className="">
@@ -15,17 +15,17 @@ export default function Footer() {
             <ul className="flex space-x-5 my-2">
               <li>
                 <Link href="#">
-                  <FaTwitter className='text-white  hover:text-[#818CF8]' size={20} />
+                  <FaTwitter className='text-[#222222]  hover:text-[#FF385C]' size={20} />
                 </Link>
               </li>
               <li>
                 <Link href="https://telegram.org/">
-                  <FaTelegram className='text-white hover:text-[#818CF8]' size={20} />
+                  <FaTelegram className='text-[#222222]  hover:text-[#FF385C]' size={20} />
                 </Link>
               </li>
               <li>
                 <Link href="#">
-                  <FaYoutube className='text-white hover:text-[#818CF8]' size={20} />
+                  <FaYoutube className='text-[#222222]  hover:text-[#FF385C]' size={20} />
                 </Link>
               </li>
             </ul>
