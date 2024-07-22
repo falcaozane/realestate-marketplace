@@ -101,22 +101,27 @@ export default function Header() {
       </div>
       {isMenuOpen && (
         <nav className="md:hidden flex flex-col items-center space-y-4 mt-4">
-          <ul className="flex flex-col items-center space-y-4">
-            <li>
-              <Link href="/marketplace" className="">
-                MarketPlace
-              </Link>
-            </li>
-            <li>
-              <Link href="/sellNFT" className="">
-                List
-              </Link>
-            </li>
-            <li>
-              <Link href="/profile" className="">
-                Profile
-              </Link>
-            </li>
+          <ul className="flex flex-col items-center space-y-4 text-[#222222] font-semibold">
+              <li>
+                <Link href="/marketplace" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
+                  MarketPlace
+                </Link>
+              </li>
+              <li>
+                <Link href="/sellNFT" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
+                  List
+                </Link>
+              </li>
+              <li>
+                <Link href="/profile" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
+                  My Buildings
+                </Link>
+              </li>
+              <li>
+                <Link href="/fractions" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg ">
+                  My Apartments
+                </Link>
+              </li>
           </ul>
         </nav>
       )}

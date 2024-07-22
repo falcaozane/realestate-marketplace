@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full py-6 bg-[#F7F7F7] text-[#222222]  shadow-lg">
-      <div className="max-w-6xl mx-auto ">
+      <div className="max-w-6xl mx-auto px-4 md:px-0">
         <div className='flex justify-between'>
           <div className="">
             <p className="text-sm my-2 text-gray-400">Copyright &copy; {year} Ignitus Network. All rights reserved!</p>
