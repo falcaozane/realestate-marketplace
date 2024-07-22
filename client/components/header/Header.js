@@ -65,12 +65,12 @@ export default function Header() {
               </li>
               <li>
                 <Link href="/profile" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg">
-                  Profile
+                  My Buildings
                 </Link>
               </li>
               <li>
                 <Link href="/fractions" className="px-3 py-3 hover:bg-[#EBEBEB] rounded-lg ">
-                  Fractions
+                  My Apartments
                 </Link>
               </li>
             </ul>
