@@ -1,6 +1,7 @@
 "use client";
 import { WalletContext } from "@/context/wallet";
 import { useContext, useEffect, useState } from "react";
+import { FaCircleCheck } from "react-icons/fa6";
 import { FaWallet } from "react-icons/fa6";
 import { ethers } from "ethers";
 import MarketplaceJson from "@/app/marketplace.json";
@@ -83,22 +84,34 @@ export default function ListedNFTs() {
               </div>
             ) : (
               <>
-                <div className="border-b-2 border-indigo-100">
-                  <div className="my-5 flex bg-[#FBE7EB] pl-2 pr-4 py-2 rounded-md w-fit items-center space-x-2 text-start">
-                    <p className="text-[12px] bg-white rounded-full px-1 py-1 flex items-center font-bold text-[#DE2350]"><FaWallet /></p>
-                    <p className="text-[12px] text-[#DE2350] w-fit">{userAddress}</p>
-                  </div>
-                  <div className="flex justify-between my-5">
-                    <div>
-                      <h2 className="md:text-xl text-sm font-bold text-[#222222] flex">
-                        Number of Listed NFTs: <p className="mx-2 text-yellow-100">{items.length}</p>
-                      </h2>
+                <div className="border-b flex justify-center">
+                  <div className="summary-card p-6 pb-10 border mt-4  mb-14 rounded-2xl">
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="icon-bg p-4 rounded-full bg-[#E9FBF3]">
+                        <div className="text-[#09CF9F] text-4xl"><FaCircleCheck /></div>
+                      </div>
+                      <div className="title flex w-[100%]  flex-col items-center justify-center pt-1 pb-5 border-b mt-2">
+                        <h1 className="text-lg font-semibold text-[#222222]">Summary</h1>
+                        <p className="text-sm">Check your collection and balance</p>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="md:text-xl text-sm font-bold text-[#222222] flex">
-                        Total Value: <p className="text-yellow-100 mx-2">{totalPrice}</p> tCore
-                      </h2>
+
+                    <div className="my-5 flex bg-[#FBE7EB] pl-2 pr-4 py-2 rounded-md w-fit justify-center items-center space-x-2 text-start">
+                      <p className="text-[12px] bg-white rounded-full px-1 py-1 flex items-center font-bold text-[#DE2350]"><FaWallet /></p>
+                      <p className="text-[12px] text-[#DE2350] w-fit">{userAddress}</p>
                     </div>
+
+                    <div className="">
+                      <div className="row flex justify-between px-1 py-2 border-b">
+                        <div className="label text-[12px] text-[#A5ACB4]">Listed NFTs</div>
+                        <div className="value text-[12px] text-[#222222] font-semibold">{items.length}</div>
+                      </div>
+                      <div className="row flex justify-between px-1 py-2 border-b">
+                        <div className="label text-[12px] text-[#A5ACB4]"> Total Value</div>
+                        <div className="value text-[12px] text-[#222222] font-semibold">{totalPrice}</div>
+                      </div>
+                    </div>
+                  
                   </div>
                 </div>
                 <div className="mt-10">
@@ -111,11 +124,11 @@ export default function ListedNFTs() {
                       ))}
                     </div>
                   ) : (
-                    <div className="">
+                    <div className="pt-4 pb-10">
                       <div className="image flex justify-center">
                         <img className="w-[200px]" src="https://www.artofheritage.com.sa/images/empty-cart.gif" alt="" />
                       </div>
-                      <div className="text-sm min-h-screen font-semibold text-[#FF385C] text-center my-4">
+                      <div className="text-sm  font-semibold text-[#FF385C] text-center my-4">
                         You don&apos;t have any listed NFT
                       </div>
                     </div>
