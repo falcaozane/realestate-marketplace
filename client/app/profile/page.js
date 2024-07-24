@@ -51,6 +51,7 @@ export default function ListedNFTs() {
           image: meta.image,
           name: meta.name,
           description: meta.description,
+          fractionsOwned,
         };
 
         itemsArray.push(item);

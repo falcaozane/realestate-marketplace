@@ -35,7 +35,16 @@ export default function NFTCard({ item }) {
           </div>
           <div className="">
             {console.log(item)}
-            <p className="text-[12px] font-semibold flex space-x-1 items-center"><span>Appartments:</span> <span className="px-2 py-1 rounded-full bg-[#FBE7EB] text-[12px] text-[#DE2350] w-fit"> {item?.fractionsAvailable} left</span></p>
+            <p className="text-[12px] font-semibold flex space-x-1 items-center"><span>Appartments:</span> <span className="px-2 py-1 rounded-full bg-[#FBE7EB] text-[12px] text-[#DE2350] w-fit">
+              {
+                item?.fractionsAvailable == 0 ?
+                  <span>Sold out</span>
+                :
+                <span> {item?.fractionsAvailable || item?.fractionsOwned} left</span>
+              }
+              
+              </span>
+            </p>
           </div>
         
       </div>
