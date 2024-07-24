@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import MarketplaceJson from "../../marketplace.json";
 import { FaCheckCircle } from "react-icons/fa";
+import { FaCopy } from "react-icons/fa6";
 import { FaWallet } from "react-icons/fa6";
 import { ethers } from "ethers";
 import axios from "axios";
@@ -24,6 +25,13 @@ export default function NFTPage() {
   const [fractions, setFractions] = useState(0);
   const { isConnected, userAddress, signer } = useContext(WalletContext);
   const router = useRouter();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(item?.seller).then(() => {
+      alert('Seller address copied to clipboard!');
+    });
+  };
 
   async function getNFTData() {
     if (!signer) return;
@@ -147,10 +155,23 @@ export default function NFTPage() {
                   <div className="">
                     
                     <div className="flex mb-3 text-sm font-semibolditems-center justify-items-center text-center">
-                      <div className="flex bg-[#FBE7EB] pl-2 pr-4 py-2 rounded-md w-fit justify-center items-center space-x-2 text-start">
-                        <p className="text-[12px] bg-white rounded-full px-1 py-1 flex items-center font-bold text-[#DE2350]"><FaWallet /></p>
-                        <div className="text-[12px] text-[#DE2350] w-fit flex space-x-1"><div className="">{item?.seller}</div><div className="text-[10px] text-[#FF3E3E]">/Seller</div></div>
+                    <div className="flex bg-[#FBE7EB] pl-2 pr-4 py-2 rounded-md w-fit justify-center items-center space-x-2 text-start">
+                      <div
+                        className="text-[12px] bg-white rounded-full px-1 py-1 flex items-center font-bold text-[#DE2350]"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                      >
+                        {isHovered ? (
+                          <FaCopy onClick={copyToClipboard} className="cursor-pointer" />
+                        ) : (
+                          <FaWallet />
+                        )}
                       </div>
+                      <div className="text-[12px] text-[#DE2350] w-fit flex space-x-1">
+                        <div>{item?.seller}</div>
+                        <div className="text-[10px] text-[#FF3E3E]">/Seller</div>
+                      </div>
+                    </div>
                     </div>
                     <div className="text-sm font-semibold mb-1">
                       <p className="text-3xl font-semibold w-[90%]">The <span className="text-[#DE2350]">{item?.name.toUpperCase()}</span> I have added some Text to Name</p>

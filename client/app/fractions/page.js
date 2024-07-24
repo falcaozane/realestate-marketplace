@@ -2,6 +2,7 @@
 import { WalletContext } from "@/context/wallet";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaWallet } from "react-icons/fa6";
+import { FaCopy } from "react-icons/fa6";
 import { useContext, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import MarketplaceJson from "@/app/marketplace.json";
@@ -11,9 +12,16 @@ import NFTTile from "@/components/nftCard/NFTCard";
 export default function FractionalNFTs() {
   const [fractionalItems, setFractionalItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState("0");
+  const [isHovered, setIsHovered] = useState(false);
   const [loading, setLoading] = useState(true);
   const { isConnected, userAddress, signer } = useContext(WalletContext);
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(userAddress).then(() => {
+      alert('Address copied to clipboard!');
+    });
+  };
+  
   async function getFractionalNFTitems() {
     let sumPrice = 0;
     const fractionalItemsArray = [];
@@ -100,7 +108,17 @@ export default function FractionalNFTs() {
                     </div>
 
                     <div className="my-5 flex bg-[#FBE7EB] pl-2 pr-4 py-2 rounded-md w-fit justify-center items-center space-x-2 text-start">
-                      <p className="text-[12px] bg-white rounded-full px-1 py-1 flex items-center font-bold text-[#DE2350]"><FaWallet /></p>
+                      <div 
+                        className="text-[12px] bg-white rounded-full px-1 py-1 flex items-center font-bold text-[#DE2350]"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                      >
+                        {isHovered ? (
+                          <FaCopy onClick={copyToClipboard} className="cursor-pointer" />
+                        ) : (
+                          <FaWallet />
+                        )}
+                      </div>
                       <p className="text-[12px] text-[#DE2350] w-fit">{userAddress}</p>
                     </div>
 
