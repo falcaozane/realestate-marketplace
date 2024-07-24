@@ -82,7 +82,7 @@ export default function Marketplace() {
                 <h2 className="text-4xl font-bold text-center text-[#222222]  uppercase">
                   Marketplace
                 </h2>
-                <h6 className="text-[16px] text-center text-[#FF385C] mb-7">Explore the Amazing collection of NFT&apos;s</h6>
+                <h6 className="text-[16px] text-center text-[#FF385C] mb-7">Explore the Amazing collection of Estates</h6>
                 {loading ? (
                   <div className="flex justify-center items-center h-64">
                     <div className="w-40 h-40 border-4 border-dashed rounded-full animate-spin border-white mt-14"></div>

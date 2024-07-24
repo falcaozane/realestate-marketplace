@@ -83,7 +83,7 @@ export default function FractionalNFTs() {
           {isConnected ? (
             loading ? (
               <div className="flex items-center justify-center h-screen">
-                <div className="w-36 h-36 border-4 border-blue-100 border-dashed rounded-full animate-spin"></div>
+                <div className="w-36 h-36 border-4 border-[#DE2350] border-dashed rounded-full animate-spin"></div>
               </div>
             ) : (
               <>
@@ -95,7 +95,7 @@ export default function FractionalNFTs() {
                       </div>
                       <div className="title flex w-[100%]  flex-col items-center justify-center pt-1 pb-5 border-b mt-2">
                         <h1 className="text-lg font-semibold text-[#222222]">Summary</h1>
-                        <p className="text-sm">Check your collection and balance</p>
+                        <p className="text-sm">Appartments Bought</p>
                       </div>
                     </div>
 
@@ -132,7 +132,7 @@ export default function FractionalNFTs() {
                         <img className="w-[200px]" src="https://www.artofheritage.com.sa/images/empty-cart.gif" alt="" />
                       </div>
                       <div className="text-sm  font-semibold text-[#FF385C] text-center my-4">
-                        You don&apos;t have any fractional NFTs
+                        You don&apos;t have any Appartments
                       </div>
                     </div>
                   )}
@@ -140,8 +140,14 @@ export default function FractionalNFTs() {
               </>
             )
           ) : (
-            <div className="text-3xl font-bold text-indigo-100 text-center my-4 py-10 h-screen">
-              You are not connected...
+            <div className="">
+              <div className="image flex justify-center  pr-16 ">
+                <img className="w-[400px]" src="https://rssmahilacollege.org/assets/img/undr.gif" alt="" />
+              </div>
+              <div className="text-3xl font-bold text-[#FF385C] flex justify-center py-8">
+                Connect Your Wallet...
+              </div>
+
             </div>
           )}
         </div>

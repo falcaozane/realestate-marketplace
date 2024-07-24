@@ -80,7 +80,7 @@ export default function ListedNFTs() {
           {isConnected ? (
             loading ? (
               <div className="flex items-center justify-center h-screen">
-                <div className="w-36 h-36 border-4 border-blue-100 border-dashed rounded-full animate-spin"></div>
+                <div className="w-36 h-36 border-4 border-[#DE2350] border-dashed rounded-full animate-spin"></div>
               </div>
             ) : (
               <>
