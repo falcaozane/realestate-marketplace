@@ -92,12 +92,13 @@ export default function Header() {
               )}
             </button>
           </div>
+          <div className="md:hidden">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
         </div>
-        <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
+        
       </div>
       {isMenuOpen && (
         <nav className="md:hidden flex flex-col items-center space-y-4 mt-4">
